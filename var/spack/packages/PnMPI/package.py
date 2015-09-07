@@ -11,6 +11,7 @@ class Pnmpi(Package):
     version('1.2.0', 'd81ec8d463fd0881ce3fcad0515eb69d', url='http://tu-dresden.de/die_tu_dresden/zentrale_einrichtungen/zih/forschung/projekte/must/files/pnmpi-for-gti-1.2.0.tar.gz')
     version('1.3.0', 'a3a947470308a58ce70ab0b5e1f701e4', url='https://doc.itc.rwth-aachen.de/download/attachments/7373495/pnmpi-for-gti-1.3.0.tgz?version=1&modificationDate=1394454458000&api=v2')
     version('1.4.0', 'c6ffec1cf980605b942b01078dcd832f', url='https://doc.itc.rwth-aachen.de/download/attachments/7373495/pnmpi-release-for-gti-1.4.0-rc1.tar.gz?version=1&modificationDate=1417292856000&api=v2')
+    version('experimental', git='git@github.com:RWTH-ELP/PnMPI.git', branch='sselab')
 
     def install(self, spec, prefix):
         cmake(".", *std_cmake_args)
