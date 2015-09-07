@@ -1,4 +1,5 @@
 from spack import *
+import os
 
 class Pnmpi(Package):
     """Virtualization Layer for the MPI Profiling Interface."""
@@ -17,3 +18,7 @@ class Pnmpi(Package):
         # FIXME: Add logic to build and install here
         make()
         make("install")
+
+    def setup_dependent_environment(self, module, spec, dep_spec):
+        """Dependencies of PnMPI find pnmpi-patch in PATH environment variable."""
+        os.environ['PATH'] = ':'.join((os.path.join(self.prefix, "bin"), os.environ['PATH']))
